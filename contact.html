@@ -22,25 +22,121 @@
     <link rel="stylesheet" href="assets/css/owl-carousel.css">
 
     <link rel="stylesheet" href="assets/css/lightbox.css">
-<!--
 
-TemplateMo 571 Hexashop
 
-https://templatemo.com/tm-571-hexashop
+      <style>
+          /* Include your existing CSS styles here */
+          body {font-family: Arial, Helvetica, sans-serif;}
 
--->
+          #myImg {
+              border-radius: 5px;
+              cursor: pointer;
+              transition: 0.3s;
+          }
+
+          #myImg:hover {opacity: 0.7;}
+
+          /* The Modal (background) */
+          .modal {
+              display: none; /* Hidden by default */
+              position: fixed; /* Stay in place */
+              z-index: 9999; /* Sit on top */
+              padding-top: 100px; /* Location of the box */
+              left: 0;
+              top: 0;
+              width: 100%; /* Full width */
+              height: 100%; /* Full height */
+              overflow: auto; /* Enable scroll if needed */
+              background-color: rgb(0,0,0); /* Fallback color */
+              background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+          }
+
+          /* Modal Content (image) */
+          .modal-content {
+              margin: auto;
+              display: block;
+              width: 80%;
+              max-width: 700px;
+              z-index: 10000; /* Ensure it is above other modal content */
+          }
+
+          /* Caption of Modal Image */
+          #caption {
+              margin: auto;
+              display: block;
+              width: 80%;
+              max-width: 700px;
+              text-align: center;
+              color: #ccc;
+              padding: 10px 0;
+              height: 150px;
+          }
+
+          /* Add Animation */
+          .modal-content, #caption {
+              -webkit-animation-name: zoom;
+              -webkit-animation-duration: 0.6s;
+              animation-name: zoom;
+              animation-duration: 0.6s;
+          }
+
+          @-webkit-keyframes zoom {
+              from {-webkit-transform:scale(0)}
+              to {-webkit-transform:scale(1)}
+          }
+
+          @keyframes zoom {
+              from {transform:scale(0)}
+              to {transform:scale(1)}
+          }
+
+          /* The Close Button */
+          .close {
+              position: absolute;
+              top: 15px;
+              right: 35px;
+              color: #f1f1f1;
+              font-size: 40px;
+              font-weight: bold;
+              transition: 0.3s;
+              z-index: 10001; /* Ensure close button is above the modal content */
+          }
+
+          .close:hover,
+          .close:focus {
+              color: #bbb;
+              text-decoration: none;
+              cursor: pointer;
+          }
+
+          /* 100% Image Width on Smaller Screens */
+          @media only screen and (max-width: 700px){
+              .modal-content {
+                  width: 100%;
+              }
+          }
+
+          #preloader {
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              height: 100vh;
+          }
+
+          #preloader img {
+              max-width: 100%;
+              height: auto;
+          }
+
+      </style>
     </head>
     
     <body>
     
     <!-- ***** Preloader Start ***** -->
     <div id="preloader">
-        <div class="jumper">
-            <div></div>
-            <div></div>
-            <div></div>
-        </div>
-    </div>  
+        <img src="assets/images/logo-nobg.png" alt="Loading...">
+    </div>
     <!-- ***** Preloader End ***** -->
     
     
@@ -52,35 +148,38 @@ https://templatemo.com/tm-571-hexashop
                     <nav class="main-nav">
                         <!-- ***** Logo Start ***** -->
                         <a href="index.html" class="logo">
-                            <img src="assets/images/logo.png">
+                            <img src="assets/images/logo-nobg.png">
                         </a>
                         <!-- ***** Logo End ***** -->
                         <!-- ***** Menu Start ***** -->
                         <ul class="nav">
-                            <li class="scroll-to-section"><a href="index.html" class="active">Home</a></li>
-                            <li class="scroll-to-section"><a href="index.html">Men's</a></li>
-                            <li class="scroll-to-section"><a href="index.html">Women's</a></li>
-                            <li class="scroll-to-section"><a href="index.html">Kid's</a></li>
-                            <li class="submenu">
-                                <a href="javascript:;">Pages</a>
-                                <ul>
-                                    <li><a href="about.html">About Us</a></li>
-                                    <li><a href="products.html">Products</a></li>
-                                    <li><a href="single-product.html">Single Product</a></li>
-                                    <li><a href="contact.html">Contact Us</a></li>
-                                </ul>
-                            </li>
-                            <li class="submenu">
-                                <a href="javascript:;">Features</a>
-                                <ul>
-                                    <li><a href="#">Features Page 1</a></li>
-                                    <li><a href="#">Features Page 2</a></li>
-                                    <li><a href="#">Features Page 3</a></li>
-                                    <li><a rel="nofollow" href="https://templatemo.com/page/4" target="_blank">Template Page 4</a></li>
-                                </ul>
-                            </li>
-                            <li class="scroll-to-section"><a href="index.html">Explore</a></li>
-                        </ul>        
+                            <li class="scroll-to-section"><a href="index.html">Home</a></li>
+                            <li class="scroll-to-section"><a href="products.html" >Catalog</a></li>
+                            <li class="scroll-to-section"><a href="about.html">About Us</a></li>
+                            <li class="scroll-to-section"><a href="contact.html"class="active">Inquire Now!</a></li>
+
+                            <!--                            <li class="scroll-to-section"><a href="#women">Women's</a></li>-->
+                            <!--                            <li class="scroll-to-section"><a href="#kids">Kid's</a></li>-->
+                            <!--                            <li class="submenu">-->
+                            <!--                                <a href="javascript:;">Pages</a>-->
+                            <!--                                <ul>-->
+                            <!--                                    <li><a href="about.html">About Us</a></li>-->
+                            <!--                                    <li><a href="products.html">Products</a></li>-->
+                            <!--                                    <li><a href="single-product.html">Single Product</a></li>-->
+                            <!--                                    <li><a href="contact.html">Contact Us</a></li>-->
+                            <!--                                </ul>-->
+                            <!--                            </li>-->
+                            <!--                            <li class="submenu">-->
+                            <!--                                <a href="javascript:;">Features</a>-->
+                            <!--                                <ul>-->
+                            <!--                                    <li><a href="#">Features Page 1</a></li>-->
+                            <!--                                    <li><a href="#">Features Page 2</a></li>-->
+                            <!--                                    <li><a href="#">Features Page 3</a></li>-->
+                            <!--                                    <li><a rel="nofollow" href="https://templatemo.com/page/4" target="_blank">Template Page 4</a></li>-->
+                            <!--                                </ul>-->
+                            <!--                            </li>-->
+                            <!--                            <li class="scroll-to-section"><a href="#explore">Explore</a></li>-->
+                        </ul>
                         <a class='menu-trigger'>
                             <span>Menu</span>
                         </a>
@@ -93,7 +192,7 @@ https://templatemo.com/tm-571-hexashop
     <!-- ***** Header Area End ***** -->
 
     <!-- ***** Main Banner Area Start ***** -->
-    <div class="page-heading about-page-heading" id="top">
+    <div class="page-heading contact-page-heading" id="top">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
@@ -113,7 +212,7 @@ https://templatemo.com/tm-571-hexashop
             <div class="row">
                 <div class="col-lg-6">
                     <div id="map">
-                      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d90186.37207676383!2d-80.13495239500924!3d25.9317678710111!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88d9ad1877e4a82d%3A0xa891714787d1fb5e!2sPier%20Park!5e1!3m2!1sen!2sth!4v1637512439384!5m2!1sen!2sth" width="100%" height="400px" frameborder="0" style="border:0" allowfullscreen></iframe>
+                      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3867.480067351328!2d121.13767627432398!3d14.22519458615891!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x33bd62450bf69a23%3A0x21b8e290a1e63551!2sSan%20Cristobal%20City%20of%20Calamba!5e0!3m2!1sen!2sph!4v1721390779423!5m2!1sen!2sph" width="100%" height="400px" frameborder="0" style="border:0" allowfullscreen></iframe>
                       <!-- You can simply copy and paste "Embed a map" code from Google Maps for any location. -->
                       
                     </div>
@@ -158,26 +257,26 @@ https://templatemo.com/tm-571-hexashop
             <div class="row">
                 <div class="col-lg-8">
                     <div class="section-heading">
-                        <h2>By Subscribing To Our Newsletter You Can Get 30% Off</h2>
-                        <span>Details to details is what makes Hexashop different from the other themes.</span>
+                        <h2>Get a Quote Now!</h2>
+                        <span>Contact us today to get a personalized quote for your business needs!</span>
                     </div>
                     <form id="subscribe" action="" method="get">
                         <div class="row">
-                          <div class="col-lg-5">
-                            <fieldset>
-                              <input name="name" type="text" id="name" placeholder="Your Name" required="">
-                            </fieldset>
-                          </div>
-                          <div class="col-lg-5">
-                            <fieldset>
-                              <input name="email" type="text" id="email" pattern="[^ @]*@[^ @]*" placeholder="Your Email Address" required="">
-                            </fieldset>
-                          </div>
-                          <div class="col-lg-2">
-                            <fieldset>
-                              <button type="submit" id="form-submit" class="main-dark-button"><i class="fa fa-paper-plane"></i></button>
-                            </fieldset>
-                          </div>
+                            <div class="col-lg-5">
+                                <fieldset>
+                                    <input name="name" type="text" id="name" placeholder="Your Name" required="">
+                                </fieldset>
+                            </div>
+                            <div class="col-lg-5">
+                                <fieldset>
+                                    <input name="email" type="text" id="email" pattern="[^ @]*@[^ @]*" placeholder="Your Email Address" required="">
+                                </fieldset>
+                            </div>
+                            <div class="col-lg-2">
+                                <fieldset>
+                                    <button type="submit" id="form-submit" class="main-dark-button"><i class="fa fa-paper-plane"></i></button>
+                                </fieldset>
+                            </div>
                         </div>
                     </form>
                 </div>
@@ -185,16 +284,16 @@ https://templatemo.com/tm-571-hexashop
                     <div class="row">
                         <div class="col-6">
                             <ul>
-                                <li>Store Location:<br><span>Sunny Isles Beach, FL 33160, United States</span></li>
-                                <li>Phone:<br><span>010-020-0340</span></li>
-                                <li>Office Location:<br><span>North Miami Beach</span></li>
+                                <li>Store Location:<br><span>TImberland bldg. Km 50 National Highway brgy San Cristobal, Calamba, Philippines</span></li>
+                                <li>Phone:<br><span>+6399-8957-7809</span></li>
+                                <li>Office Location:<br><span> San Cristobal Calmba Laguna</span></li>
                             </ul>
                         </div>
                         <div class="col-6">
                             <ul>
                                 <li>Work Hours:<br><span>07:30 AM - 9:30 PM Daily</span></li>
-                                <li>Email:<br><span>info@company.com</span></li>
-                                <li>Social Media:<br><span><a href="#">Facebook</a>, <a href="#">Instagram</a>, <a href="#">Behance</a>, <a href="#">Linkedin</a></span></li>
+                                <li>Email:<br><span>triwynnsportswear14@yahoo.com</span></li>
+                                <li>Social Media:<br><span><a href="https://www.facebook.com/triwynnsportswear">Facebook</a>, <a href="#">Instagram</a>, <a href="#">Behance</a>, <a href="#">Linkedin</a></span></li>
                             </ul>
                         </div>
                     </div>
@@ -211,30 +310,29 @@ https://templatemo.com/tm-571-hexashop
                 <div class="col-lg-3">
                     <div class="first-item">
                         <div class="logo">
-                            <img src="assets/images/white-logo.png" alt="hexashop ecommerce templatemo">
+                            <img src="assets/images/logo-new.png" alt="logo">
                         </div>
                         <ul>
-                            <li><a href="#">16501 Collins Ave, Sunny Isles Beach, FL 33160, United States</a></li>
-                            <li><a href="#">hexashop@company.com</a></li>
-                            <li><a href="#">010-020-0340</a></li>
+                            <li><a href="#">TImberland bldg. Km 50 National Highway brgy San Cristobal, Calamba, Philippines</a></li>
+                            <li><a href="#">triwynnsportswear14@yahoo.com</a></li>
+                            <li><a href="#">+6399-8957-7809</a></li>
                         </ul>
                     </div>
                 </div>
                 <div class="col-lg-3">
                     <h4>Shopping &amp; Categories</h4>
                     <ul>
-                        <li><a href="#">Men’s Shopping</a></li>
-                        <li><a href="#">Women’s Shopping</a></li>
-                        <li><a href="#">Kid's Shopping</a></li>
+                        <li><a href="#men" class="">Jerseys</a></li>
+                        <li><a href="#women">Polo</a></li>
+                        <li><a href="#kids">Sports Apparel</a></li>
                     </ul>
                 </div>
                 <div class="col-lg-3">
                     <h4>Useful Links</h4>
                     <ul>
-                        <li><a href="#">Homepage</a></li>
-                        <li><a href="#">About Us</a></li>
-                        <li><a href="#">Help</a></li>
-                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="index.html">Homepage</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
                     </ul>
                 </div>
                 <div class="col-lg-3">
@@ -242,17 +340,17 @@ https://templatemo.com/tm-571-hexashop
                     <ul>
                         <li><a href="#">Help</a></li>
                         <li><a href="#">FAQ's</a></li>
-                        <li><a href="#">Shipping</a></li>
-                        <li><a href="#">Tracking ID</a></li>
+                        <!--                        <li><a href="#">Shipping</a></li>-->
+                        <!--                        <li><a href="#">Tracking ID</a></li>-->
                     </ul>
                 </div>
                 <div class="col-lg-12">
                     <div class="under-footer">
-                        <p>Copyright © 2022 HexaShop Co., Ltd. All Rights Reserved. 
-                        
-                        <br>Design: <a href="https://templatemo.com" target="_parent" title="free css templates">TemplateMo</a></p>
+                        <p>Copyright © 2024 Triwynn Co., Ltd. All Rights Reserved.
+
+
                         <ul>
-                            <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                            <li><a href="https://www.facebook.com/triwynnsportswear/"><i class="fa fa-facebook"></i></a></li>
                             <li><a href="#"><i class="fa fa-twitter"></i></a></li>
                             <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
                             <li><a href="#"><i class="fa fa-behance"></i></a></li>
@@ -262,7 +360,11 @@ https://templatemo.com/tm-571-hexashop
             </div>
         </div>
     </footer>
-    
+    <div id="myModal" class="modal">
+        <span class="close">&times;</span>
+        <img class="modal-content" id="img01">
+        <div id="caption"></div>
+    </div>
 
     <!-- jQuery -->
     <script src="assets/js/jquery-2.1.0.min.js"></script>
@@ -288,19 +390,61 @@ https://templatemo.com/tm-571-hexashop
 
     <script>
 
+        // Get the modal
+        var modal = document.getElementById("myModal");
+
+        // Get the image and insert it inside the modal - use its "alt" text as a caption
+        var modalImg = document.getElementById("img01");
+        var captionText = document.getElementById("caption");
+
+        // Function to show modal when an image is clicked
+        function showModal(imgSrc, imgAlt) {
+            modal.style.display = "block";
+            modalImg.src = imgSrc;
+            captionText.innerHTML = imgAlt;
+        }
+
+        // Get all "fa fa-eye" icons inside the carousel
+        var viewIcons = document.querySelectorAll(".view-image");
+        viewIcons.forEach(icon => {
+            icon.onclick = function(event) {
+                event.preventDefault();
+                var imgSrc = this.getAttribute("data-src");
+                var imgAlt = this.getAttribute("data-alt");
+                showModal(imgSrc, imgAlt);
+            }
+        });
+
+        // Get the <span> element that closes the modal
+        var span = document.getElementsByClassName("close")[0];
+
+        // When the user clicks on <span> (x), close the modal
+        span.onclick = function() {
+            modal.style.display = "none";
+        }
+
+        // When the user clicks anywhere outside of the modal, close it
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+
         $(function() {
             var selectedClass = "";
             $("p").click(function(){
-            selectedClass = $(this).attr("data-rel");
-            $("#portfolio").fadeTo(50, 0.1);
+                selectedClass = $(this).attr("data-rel");
+                $("#portfolio").fadeTo(50, 0.1);
                 $("#portfolio div").not("."+selectedClass).fadeOut();
-            setTimeout(function() {
-              $("."+selectedClass).fadeIn();
-              $("#portfolio").fadeTo(50, 1);
-            }, 500);
-                
+                setTimeout(function() {
+                    $("."+selectedClass).fadeIn();
+                    $("#portfolio").fadeTo(50, 1);
+                }, 500);
+
             });
         });
+
+
 
     </script>
 
